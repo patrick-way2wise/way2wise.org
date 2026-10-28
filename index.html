@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>way2wise.org — Coming soon</title>
+<meta name="description" content="way2wise.org is the non-profit home of way2wise. More about our mission and how to get involved is coming soon.">
+<link rel="canonical" href="https://way2wise.org/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://way2wise.org/">
+<meta property="og:site_name" content="way2wise.org">
+<meta property="og:title" content="way2wise.org — Coming soon">
+<meta property="og:description" content="The non-profit home of way2wise. More is coming soon.">
+<meta property="og:image" content="https://way2wise.org/assets/w2w-logo.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+<link rel="shortcut icon" href="/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* Brand tokens match way2wise.ai's assets/styles.css (WCAG AA values from 2026-08-25). */
+  :root {
+    --way-blue: #3D6EBD;
+    --way-blue-text: #3D6EBD;
+    --wise-green: #1C7E57;
+    --heading: #27406E;
+    --ink: #1E2A40;
+    --muted: #4A5670;
+    --bg-page: #FFFFFF;
+    --bg-tint: #EEF3FB;
+    --border-tint: #DCE7F7;
+    --btn-hover: #3A66AE;
+    --display: 'Quicksand', sans-serif;
+    --body: 'Figtree', sans-serif;
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --way-blue: #4475CB;
+      --way-blue-text: #5180CF;
+      --wise-green: #34C48A;
+      --heading: #A9C4EE;
+      --ink: #E7ECF5;
+      --muted: #A9B4C9;
+      --bg-page: #0C1220;
+      --bg-tint: #10182A;
+      --border-tint: #26314A;
+      --btn-hover: #5C86D2;
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: var(--body);
+    color: var(--ink);
+    background: var(--bg-page);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 16px;
+  }
+  .card {
+    max-width: 620px;
+    width: 100%;
+    text-align: center;
+  }
+  .logo { width: 88px; height: auto; margin-bottom: 28px; }
+  .eyebrow {
+    font-family: var(--display);
+    font-weight: 600;
+    color: var(--wise-green);
+    letter-spacing: .04em;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    color: var(--heading);
+    font-size: clamp(1.9rem, 5vw, 2.75rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  p.lede { color: var(--muted); font-size: 1.125rem; margin-bottom: 32px; }
+  .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    font-family: var(--display);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: var(--radius);
+    border: 2px solid var(--way-blue);
+  }
+  .btn-primary { background: var(--way-blue); color: #fff; }
+  .btn-primary:hover { background: var(--btn-hover); border-color: var(--btn-hover); }
+  .btn-ghost { color: var(--way-blue-text); background: transparent; }
+  .btn-ghost:hover { background: var(--bg-tint); }
+  .btn:focus-visible { outline: 3px solid var(--wise-green); outline-offset: 3px; }
+  footer {
+    border-top: 1px solid var(--border-tint);
+    padding: 20px 16px;
+    text-align: center;
+    color: var(--muted);
+    font-size: .875rem;
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <div class="card">
+    <img class="logo" src="assets/w2w-logo.png" alt="way2wise">
+    <p class="eyebrow">way2wise.org</p>
+    <h1>The non-profit home of way2wise is on its way.</h1>
+    <p class="lede">We're setting up a non-profit to carry part of way2wise's work forward. Our mission, programs and ways to get involved will be posted here soon.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://way2wise.ai/contact.html">Get in touch</a>
+      <a class="btn btn-ghost" href="https://way2wise.ai/">Visit way2wise.ai</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; <span id="year">2026</span> way2wise.org</p>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

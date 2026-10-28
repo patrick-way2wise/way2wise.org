@@ -1,0 +1,10 @@
+# Netlify configuration for way2wise.org (static placeholder, no build step)
+
+[build]
+  publish = "."
+
+# Every unknown path lands on the placeholder rather than a 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
