@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>way2wise.org — Coming soon</title>
-<meta name="description" content="way2wise.org is the non-profit home of way2wise. More about our mission and how to get involved is coming soon.">
+<title>Way2Wise Institute — Advancing the Human Side of Technology</title>
+<meta name="description" content="Way2Wise Institute: Advancing the Human Side of Technology. Our mission, programs and ways to get involved are coming soon.">
 <link rel="canonical" href="https://way2wise.org/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://way2wise.org/">
-<meta property="og:site_name" content="way2wise.org">
-<meta property="og:title" content="way2wise.org — Coming soon">
-<meta property="og:description" content="The non-profit home of way2wise. More is coming soon.">
+<meta property="og:site_name" content="Way2Wise Institute">
+<meta property="og:title" content="Way2Wise Institute — Advancing the Human Side of Technology">
+<meta property="og:description" content="Our mission, programs and ways to get involved are coming soon.">
 <meta property="og:image" content="https://way2wise.org/assets/w2w-logo.png">
 <meta name="twitter:card" content="summary">
 
@@ -79,7 +79,11 @@
     width: 100%;
     text-align: center;
   }
-  .logo { width: 88px; height: auto; margin-bottom: 28px; }
+  .logo { width: min(240px, 60vw); height: auto; margin-bottom: 28px; }
+  /* The wordmark's navy "INSTITUTE" line disappears on the dark page, so give it a light tile there. */
+  @media (prefers-color-scheme: dark) {
+    .logo { background: #FFFFFF; padding: 14px 18px; border-radius: var(--radius); }
+  }
   .eyebrow {
     font-family: var(--display);
     font-weight: 600;
@@ -124,10 +128,10 @@
 
 <main>
   <div class="card">
-    <img class="logo" src="assets/w2w-logo.png" alt="way2wise">
-    <p class="eyebrow">way2wise.org</p>
-    <h1>The non-profit home of way2wise is on its way.</h1>
-    <p class="lede">We're setting up a non-profit to carry part of way2wise's work forward. Our mission, programs and ways to get involved will be posted here soon.</p>
+    <img class="logo" src="assets/w2w-logo.png?v=2" alt="Way2Wise Institute" width="759" height="555">
+    <p class="eyebrow">Way2Wise Institute</p>
+    <h1>Advancing the Human Side of Technology</h1>
+    <p class="lede">Way2Wise Institute is the non-profit home of way2wise's work. Our mission, programs and ways to get involved will be posted here soon.</p>
     <div class="actions">
       <a class="btn btn-primary" href="https://way2wise.ai/contact.html">Get in touch</a>
       <a class="btn btn-ghost" href="https://way2wise.ai/">Visit way2wise.ai</a>
@@ -136,7 +140,7 @@
 </main>
 
 <footer>
-  <p>&copy; <span id="year">2026</span> way2wise.org</p>
+  <p>&copy; <span id="year">2026</span> Way2Wise Institute</p>
 </footer>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
