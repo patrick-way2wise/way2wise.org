@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Way2Wise Institute — Advancing the Human Side of Technology</title>
-<meta name="description" content="Way2Wise Institute: Advancing the Human Side of Technology. Our mission, programs and ways to get involved are coming soon.">
+<meta name="description" content="Way2Wise Institute is a nonprofit research organization working to ensure human emotional intelligence, self-awareness and agency keep pace with AI automation.">
 <link rel="canonical" href="https://way2wise.org/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://way2wise.org/">
 <meta property="og:site_name" content="Way2Wise Institute">
 <meta property="og:title" content="Way2Wise Institute — Advancing the Human Side of Technology">
-<meta property="og:description" content="Our mission, programs and ways to get involved are coming soon.">
+<meta property="og:description" content="Open research and open tools so human emotional intelligence and agency keep pace with AI automation.">
 <meta property="og:image" content="https://way2wise.org/assets/w2w-logo.png">
 <meta name="twitter:card" content="summary">
 
@@ -36,103 +36,279 @@
     --muted: #4A5670;
     --bg-page: #FFFFFF;
     --bg-tint: #EEF3FB;
+    --bg-card: #FFFFFF;
     --border-tint: #DCE7F7;
     --btn-hover: #3A66AE;
     --display: 'Quicksand', sans-serif;
     --body: 'Figtree', sans-serif;
     --radius: 14px;
+    --wrap: 1080px;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --way-blue: #4475CB;
-      --way-blue-text: #5180CF;
+      --way-blue-text: #7FA3E0;
       --wise-green: #34C48A;
       --heading: #A9C4EE;
       --ink: #E7ECF5;
       --muted: #A9B4C9;
       --bg-page: #0C1220;
       --bg-tint: #10182A;
+      --bg-card: #141E33;
       --border-tint: #26314A;
       --btn-hover: #5C86D2;
     }
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { height: 100%; }
-  body {
-    font-family: var(--body);
-    color: var(--ink);
-    background: var(--bg-page);
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-  }
-  main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 48px 16px;
-  }
-  .card {
-    max-width: 620px;
-    width: 100%;
-    text-align: center;
-  }
-  .logo { width: min(240px, 60vw); height: auto; margin-bottom: 28px; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { font-family: var(--body); font-size: 1.0625rem; color: var(--ink); background: var(--bg-page); line-height: 1.65; }
+  a { color: var(--way-blue-text); }
+  :focus-visible { outline: 3px solid var(--wise-green); outline-offset: 3px; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 700; color: var(--heading); line-height: 1.25; }
+  h2 { font-size: clamp(1.6rem, 3.5vw, 2.1rem); margin-bottom: 16px; }
+  h3 { font-size: 1.2rem; margin-bottom: 8px; }
+  p + p { margin-top: 1em; }
+
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 720px) { .wrap { padding: 0 32px; } }
+  .narrow { max-width: 760px; }
+  section { padding: 64px 0; }
+  @media (min-width: 720px) { section { padding: 80px 0; } }
+  .tint { background: var(--bg-tint); }
+  .eyebrow { font-family: var(--display); font-weight: 700; font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; color: var(--wise-green); margin-bottom: 10px; }
+  .lede { font-size: 1.2rem; color: var(--muted); }
+
+  .skip { position: absolute; left: -9999px; top: 8px; background: var(--heading); color: var(--bg-page); padding: 8px 14px; border-radius: 8px; z-index: 10; }
+  .skip:focus { left: 8px; }
+
+  /* Header */
+  .site-header { border-bottom: 1px solid var(--border-tint); }
+  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; padding-top: 14px; padding-bottom: 14px; }
+  .brand { font-family: var(--display); font-weight: 700; font-size: 1.2rem; color: var(--heading); text-decoration: none; }
+  .site-nav ul { display: flex; flex-wrap: wrap; gap: 4px 20px; list-style: none; }
+  .site-nav a { color: var(--ink); text-decoration: none; font-weight: 500; padding: 6px 0; }
+  .site-nav a:hover { color: var(--way-blue-text); text-decoration: underline; }
+
+  /* Hero */
+  .hero { text-align: center; padding-top: 56px; }
+  .logo { width: min(240px, 60vw); height: auto; margin: 0 auto 28px; display: block; }
   /* The wordmark's navy "INSTITUTE" line disappears on the dark page, so give it a light tile there. */
   @media (prefers-color-scheme: dark) {
     .logo { background: #FFFFFF; padding: 14px 18px; border-radius: var(--radius); }
   }
-  h1 {
-    font-family: var(--display);
-    font-weight: 700;
-    color: var(--heading);
-    font-size: clamp(1.9rem, 5vw, 2.75rem);
-    line-height: 1.2;
-    margin-bottom: 20px;
-  }
-  p.lede { color: var(--muted); font-size: 1.125rem; margin-bottom: 32px; }
-  .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .btn {
-    display: inline-block;
-    font-family: var(--display);
-    font-weight: 600;
-    text-decoration: none;
-    padding: 12px 22px;
-    border-radius: var(--radius);
-    border: 2px solid var(--way-blue);
-  }
+  .hero h1 { font-size: clamp(1.9rem, 5vw, 2.75rem); margin-bottom: 20px; }
+  .hero .lede { max-width: 680px; margin: 0 auto; }
+  .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+  .btn { display: inline-block; font-family: var(--display); font-weight: 600; text-decoration: none; padding: 12px 22px; border-radius: var(--radius); border: 2px solid var(--way-blue); }
   .btn-primary { background: var(--way-blue); color: #fff; }
-  .btn-primary:hover { background: var(--btn-hover); border-color: var(--btn-hover); }
+  .btn-primary:hover { background: var(--btn-hover); border-color: var(--btn-hover); color: #fff; }
   .btn-ghost { color: var(--way-blue-text); background: transparent; }
   .btn-ghost:hover { background: var(--bg-tint); }
-  .btn:focus-visible { outline: 3px solid var(--wise-green); outline-offset: 3px; }
-  footer {
-    border-top: 1px solid var(--border-tint);
-    padding: 20px 16px;
-    text-align: center;
-    color: var(--muted);
-    font-size: .875rem;
-  }
+
+  /* Mission / vision */
+  .mv { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; margin-top: 32px; }
+  @media (min-width: 820px) { .mv { grid-template-columns: 1fr 1fr; } }
+  .panel { background: var(--bg-card); border: 1px solid var(--border-tint); border-radius: var(--radius); padding: 28px; }
+
+  /* Assess · Flex · Partner */
+  .afp { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; margin-top: 28px; list-style: none; }
+  @media (min-width: 820px) { .afp { grid-template-columns: repeat(3, 1fr); } }
+  .afp li { border-top: 4px solid var(--way-blue); padding-top: 16px; }
+  .afp li:nth-child(2) { border-top-color: var(--wise-green); }
+  .afp li:nth-child(3) { border-top-color: var(--heading); }
+  .principles { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; margin-top: 40px; }
+  @media (min-width: 820px) { .principles { grid-template-columns: repeat(3, 1fr); } }
+
+  /* Pillars */
+  .pillars { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; margin-top: 32px; counter-reset: pillar; }
+  @media (min-width: 820px) { .pillars { grid-template-columns: 1fr 1fr; } }
+  .pillar h3::before { counter-increment: pillar; content: "Pillar " counter(pillar, upper-roman); display: block; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--wise-green); margin-bottom: 4px; }
+  .pillar ul { margin: 12px 0 0 20px; }
+  .pillar li + li { margin-top: 6px; }
+
+  /* Governance */
+  .checks { list-style: none; margin-top: 20px; }
+  .checks li { position: relative; padding-left: 28px; }
+  .checks li + li { margin-top: 10px; }
+  .checks li::before { content: ""; position: absolute; left: 4px; top: .6em; width: 10px; height: 10px; border-radius: 50%; background: var(--wise-green); }
+  .note { margin-top: 24px; color: var(--muted); font-size: .975rem; }
+
+  /* Involved */
+  .involved { text-align: center; }
+  .involved .lede { max-width: 640px; margin: 0 auto; }
+
+  footer { border-top: 1px solid var(--border-tint); padding: 24px 16px; text-align: center; color: var(--muted); font-size: .9rem; }
+  footer p + p { margin-top: 4px; }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<main>
-  <div class="card">
-    <img class="logo" src="assets/w2w-logo.png?v=2" alt="Way2Wise Institute" width="759" height="555">
-    <h1>Advancing the Human Side of Technology</h1>
-    <p class="lede">Way2Wise Institute is the non-profit home of way2wise's work. Our mission, programs and ways to get involved will be posted here soon.</p>
-    <div class="actions">
-      <a class="btn btn-primary" href="https://way2wise.ai/contact.html">Get in touch</a>
-      <a class="btn btn-ghost" href="https://way2wise.ai/">Visit way2wise.ai</a>
-    </div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">Way2Wise Institute</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#work">Our work</a></li>
+        <li><a href="#governance">Governance</a></li>
+        <li><a href="#involved">Get involved</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <img class="logo" src="assets/w2w-logo.png?v=2" alt="Way2Wise Institute" width="759" height="555">
+      <h1>Advancing the Human Side of Technology</h1>
+      <p class="lede">Way2Wise Institute is a nonprofit research organization. We work to make sure human emotional intelligence, self-awareness and agency keep pace with AI automation.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#involved">Get involved</a>
+        <a class="btn btn-ghost" href="#work">See our work</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint" aria-labelledby="why-h">
+    <div class="wrap narrow">
+      <p class="eyebrow">Why now</p>
+      <h2 id="why-h">AI is removing the rungs where people learned judgment</h2>
+      <p>Agentic AI is changing professional work in software, medicine, finance and defense. Automation speeds up the technical work. But it also removes the entry-level practice where people used to build judgment, manage their emotions and learn to work as a team.</p>
+      <p>We study what that loss does to people, and we build open, practical ways to grow those skills back into everyday work.</p>
+    </div>
+  </section>
+
+  <section id="mission" aria-labelledby="mission-h">
+    <div class="wrap">
+      <p class="eyebrow">Mission &amp; vision</p>
+      <h2 id="mission-h">What we're here to do</h2>
+      <div class="mv">
+        <div class="panel">
+          <h3>Our mission</h3>
+          <p>To make sure human emotional intelligence, self-awareness and psychological agency keep pace with automation. We do this through open-access research, privacy-first reflective AI and educational programs. They help people and organizations build emotional self-regulation, dignity and shared accountability at work.</p>
+        </div>
+        <div class="panel">
+          <h3>Our vision</h3>
+          <p>A future where AI doesn't replace human thinking or watch over workers. Instead, it serves as a trustworthy mirror for inner growth, helping build a workforce known for resilience, compassionate leadership and systems that put people first.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach" class="tint" aria-labelledby="approach-h">
+    <div class="wrap">
+      <p class="eyebrow">Our approach</p>
+      <h2 id="approach-h">Assess · Flex · Partner</h2>
+      <p class="lede">Our approach draws on classic Organization Development, research on mindfulness, and privacy-first software design.</p>
+      <ul class="afp">
+        <li>
+          <h3>Assess</h3>
+          <p>We set careful, evidence-based baselines for emotional self-regulation, using validated scales and situational-judgment measures.</p>
+        </li>
+        <li>
+          <h3>Flex</h3>
+          <p>We develop small, situation-specific skills that help people stay calm and adapt under acute stress and high-stakes decisions.</p>
+        </li>
+        <li>
+          <h3>Partner</h3>
+          <p>We treat AI as a reflective partner that doesn't judge, not as an authority that grades people.</p>
+        </li>
+      </ul>
+      <div class="principles">
+        <div class="panel">
+          <h3>Privacy by design</h3>
+          <p>People can't reflect honestly while they're being watched. We develop standards that keep personal reflections private, and we hold that reflections must never be used to train AI models.</p>
+        </div>
+        <div class="panel">
+          <h3>Grounded action research</h3>
+          <p>Based on Kurt Lewin's action research and David Kolb's experiential learning cycle, our programs treat everyday friction at work as the place where people grow. They turn real stress into reflection and concrete changes in behavior.</p>
+        </div>
+        <div class="panel">
+          <h3>Whole-system thinking</h3>
+          <p>We look at AI rollouts as both social and technical systems. The goal is that technology choices protect dignity, psychological safety and team cohesion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <p class="eyebrow">Our work</p>
+      <h2 id="work-h">Four pillars</h2>
+      <p class="lede">The Institute for Agentic EQ &amp; Reflective AI, our scientific advisory committee, guides our research methods, publications and ethics standards.</p>
+      <div class="pillars">
+        <div class="panel pillar">
+          <h3>Academic research &amp; open standards</h3>
+          <ul>
+            <li>Open psychometric benchmarks for emotional self-regulation in automated work, measured with more than self-report surveys.</li>
+            <li>Short reflective-AI modules built into university engineering, medical and business capstone courses.</li>
+            <li>Graduate and postdoctoral fellowships in agentic organization design, clinical empathy and human-computer interaction.</li>
+          </ul>
+        </div>
+        <div class="panel pillar">
+          <h3>Workforce, healthcare &amp; high-stakes resilience</h3>
+          <ul>
+            <li><strong>Software engineering:</strong> reducing burnout and code-review friction with techniques like "summarize before you argue."</li>
+            <li><strong>Healthcare:</strong> preserving clinical empathy through structured reflection on delivering bad news.</li>
+            <li><strong>High-stakes operations:</strong> grounding techniques that help leaders and first responders manage acute stress.</li>
+          </ul>
+        </div>
+        <div class="panel pillar">
+          <h3>Open models &amp; privacy-first architecture</h3>
+          <ul>
+            <li>Reflective coaching built on open-weight AI models to avoid vendor lock-in and keep it accessible.</li>
+            <li>Knowledge bases built on peer-reviewed psychology, resilience and mindfulness research.</li>
+            <li>Technical standards for encryption and data pipelines that protect people's anonymity.</li>
+          </ul>
+        </div>
+        <div class="panel pillar">
+          <h3>Public education &amp; open resources</h3>
+          <ul>
+            <li>Free reflection workbooks, workshop curricula and scenario banks under Creative Commons licenses.</li>
+            <li>Nonpartisan research briefings for schools, funders and policymakers on ethical AI and human agency.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="governance" class="tint" aria-labelledby="gov-h">
+    <div class="wrap narrow">
+      <p class="eyebrow">Governance</p>
+      <h2 id="gov-h">Independent, and open about how we work</h2>
+      <p>The Institute is governed by an independent Board of Directors. Our research findings, evaluations and toolkits are published openly for public benefit.</p>
+      <p>Our commercial partner, <a href="https://way2wise.ai/">way2wise.ai LLC</a>, builds and runs software products. The Institute may contract with it for technical services. We keep the two separate, and that separation has rules:</p>
+      <ul class="checks">
+        <li>Every agreement with way2wise.ai is reviewed and approved by directors who have no financial interest in it.</li>
+        <li>Terms must be at fair market value, checked against independent market data and competing bids.</li>
+        <li>Anyone with a conflict of interest must disclose it, and leaves the room for both discussion and vote.</li>
+        <li>No part of the Institute's net earnings goes to its directors, officers or any private individual.</li>
+      </ul>
+      <p class="note">Way2Wise Institute is preparing its application for federal tax-exempt status. Until it is approved, gifts to the Institute aren't tax-deductible.</p>
+    </div>
+  </section>
+
+  <section id="involved" class="involved" aria-labelledby="inv-h">
+    <div class="wrap">
+      <p class="eyebrow">Get involved</p>
+      <h2 id="inv-h">Work with us</h2>
+      <p class="lede">We're looking for research partners in universities, clinical settings and public-interest organizations, and for future fellows and funders. We'd love to hear from you.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://way2wise.ai/contact.html">Get in touch</a>
+        <a class="btn btn-ghost" href="https://way2wise.ai/">Visit way2wise.ai</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <p>&copy; <span id="year">2026</span> Way2Wise Institute</p>
+  <p>&copy; <span id="year">2026</span> Way2Wise Institute · Santa Cruz County, California</p>
+  <p>Advancing the Human Side of Technology</p>
 </footer>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
